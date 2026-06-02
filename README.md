@@ -1,9 +1,23 @@
-# 5mao-Imager
+🔥 独立/自媒体搞图神器：5mao-Imager 🔥
+🚀 5毛钱，180张图！全网最便宜的生图机器人
+📌 项目简介 / Introduction
+🇨🇳 中文
+在这个被高价 AI 订阅绑架的时代，5mao-Imager是一款专为跨境电商、自媒体网感博主、开发者量身定制的极致极简、极度便宜的自动批量生图工具。
 
-5mao-Imager is a lean, browser-based image generation workstation for third-party OpenAI-compatible providers. It keeps the workflow intentionally simple: enter an API key, set the provider base URL, choose the model and paths, then generate text-to-image or image-to-image results directly in the browser.
+不需要懂复杂的 Prompt 提示词，不需要配置本地显卡，更不用买几百块一个月的 Midjourney。你只需要在网站上填入2个链接（一个网站链接，一个密码key），剩下的交给 5mao-Imager。
+就能疯狂生成 180 张高清大图！ 真正的把价格打到地心里。不管是批量做壁纸、做小红书封面、还是给独立站刷商品图，用它就是闭着眼睛省钱。复制、粘贴、运行，三步原地起飞，让你的生产力直接超级加倍！
 
-The app is built for fast, low-friction use. API settings are saved locally, the interface supports a local proxy mode for CORS-blocked providers, and the result panel keeps history, downloads, and preview management in one place. It is designed to be easy to pick up, easy to configure, and easy to keep running without a backend.
+🇬🇧 English
+Say goodbye to overpriced AI image subscriptions! 5mao-Imager is here to disrupt the market. It is the ultimate, hyper-budget, and ultra-simplified automated batch image generation tool designed for independent developers, content creators, and e-commerce hustlers.
 
-5mao-Imager 是一个轻量的浏览器端图片生成工具，面向第三方 OpenAI-compatible 接口。整个流程尽量压缩到最少步骤：填写 API Key、配置服务商地址、选择模型和路径，就可以直接在浏览器里完成文生图和图生图。
+How simple is it?
+Forget complex prompt engineering, heavy GPU rigs, or expensive monthly Midjourney plans. All you need to do is paste 2 links (an input source and an output destination). 5mao-Imager handles the rest.
 
-它强调的是低门槛、快上手、少折腾。配置仅保存在本地浏览器，支持本地代理模式来绕过部分 CORS 限制，结果区同时提供历史记录、下载和预览管理。整体目标很明确：配置简单，使用直接，适合想快速把图片生成流程跑起来的人。
+How cheap is it?
+We’ve pushed the cost efficiency to the absolute technical limit: generate up to 180 high-definition images for as low as ¥0.5 (under $0.1)! Whether you are batch-creating wallpapers, social media covers, or e-commerce product shots, this tool saves you a fortune. Just copy, paste, and run. Three simple steps to explode your productivity!
+
+⚡ 核心亮点 / Core Features
+
+⚡ 极简双链操作 (2-Link Setup): 告别繁琐配置，填入 2 个链接，直接一键自动化。
+
+🛠️ 纯粹开源 (100% Open Source): 没开通、没VIP、没隐藏消费，代码全开源，即开即用
