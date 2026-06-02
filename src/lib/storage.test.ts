@@ -91,4 +91,50 @@ describe("local storage helpers", () => {
 
     expect(loadHistory()).toEqual(history);
   });
+
+  it("does not persist base64 image data URLs in history", () => {
+    const history: HistoryRecord[] = [
+      {
+        id: "base64-id",
+        imageUrl: "data:image/png;base64,abc123",
+        mode: "text-to-image",
+        prompt: "city wallpaper",
+        size: "1024x1024",
+        createdAt: "2026-06-02T17:30:12.000Z",
+        saved: false,
+        fileName: "gptimage2-text-20260602-173012.png",
+      },
+    ];
+
+    saveHistory(history);
+
+    expect(loadHistory()).toEqual([]);
+  });
+
+  it("removes legacy base64 history records when loading", () => {
+    const persistableRecord: HistoryRecord = {
+      id: "url-id",
+      imageUrl: "https://example.com/generated.png",
+      mode: "text-to-image",
+      prompt: "city wallpaper",
+      size: "1024x1024",
+      createdAt: "2026-06-02T17:30:12.000Z",
+      saved: false,
+      fileName: "gptimage2-text-20260602-173012.png",
+    };
+    localStorage.setItem(
+      "gptimage2.history",
+      JSON.stringify([
+        persistableRecord,
+        {
+          ...persistableRecord,
+          id: "base64-id",
+          imageUrl: "data:image/png;base64,abc123",
+        },
+      ])
+    );
+
+    expect(loadHistory()).toEqual([persistableRecord]);
+    expect(JSON.parse(localStorage.getItem("gptimage2.history") ?? "[]")).toEqual([persistableRecord]);
+  });
 });

@@ -70,7 +70,7 @@ export function loadApiConfig(): ApiConfig | null {
 }
 
 export function saveHistory(history: HistoryRecord[]): void {
-  localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(history.filter(isPersistableHistoryRecord)));
 }
 
 export function loadHistory(): HistoryRecord[] {
@@ -85,7 +85,13 @@ export function loadHistory(): HistoryRecord[] {
       return [];
     }
 
-    return parsed.filter(isHistoryRecord);
+    const history = parsed.filter(isHistoryRecord);
+    const persistableHistory = history.filter(isPersistableHistoryRecord);
+    if (persistableHistory.length !== history.length) {
+      saveHistory(persistableHistory);
+    }
+
+    return persistableHistory;
   } catch {
     return [];
   }
@@ -107,4 +113,8 @@ function isHistoryRecord(record: unknown): record is HistoryRecord {
     typeof candidate.saved === "boolean" &&
     typeof candidate.fileName === "string"
   );
+}
+
+function isPersistableHistoryRecord(record: HistoryRecord): boolean {
+  return /^https?:\/\//i.test(record.imageUrl);
 }
