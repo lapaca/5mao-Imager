@@ -27,3 +27,12 @@ We’ve pushed the cost efficiency to the absolute technical limit: generate up 
  base64 历史被持久化导致刷新卡住bug解决
  支持文生图和图生图（图片修改）功能
  支持更多api类型，注意部分三方api原生不支持某些格式如9:16
+
+## Quick launch on macOS
+
+For local non-technical users on macOS, the repo root includes:
+
+- `生图imager.app`: double-click to launch through Terminal
+- `生图imager.command`: fallback launcher if macOS blocks the app bundle
+
+The launcher installs dependencies if needed, starts the local Vite server, and opens `http://127.0.0.1:5173/` automatically.

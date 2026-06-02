@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+APP_BUNDLE_DIR="$(cd -- "$(dirname -- "$0")/../.." && pwd)"
+PROJECT_DIR="$(cd -- "$APP_BUNDLE_DIR/.." && pwd)"
+COMMAND_PATH="$PROJECT_DIR/生图imager.command"
+
+/usr/bin/osascript <<EOF "$COMMAND_PATH"
+on run argv
+  set commandPath to item 1 of argv
+  tell application "Terminal"
+    activate
+    do script "zsh " & quoted form of commandPath
+  end tell
+end run
+EOF
